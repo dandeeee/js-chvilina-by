@@ -1,0 +1,102 @@
+
+@media all and (max-width: 640px){
+    .wrapper {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 0 1em 0;
+        /*border: 2px solid red;*/
+    }
+    #watches {
+        margin-left: -100px;
+    }
+
+    #submit_page{
+        width: 80% !important;
+        margin: 1% !important;
+    }
+}
+
+
+@media all and (min-width: 640px) and (max-width: 1280px)  {
+    .wrapper {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 0 1em 0;
+        /*border: 2px solid greenyellow;*/
+    }
+    #watches {
+        margin-left: -50px;
+    }
+
+    #submit_page{
+        width: 80% !important;
+        margin: 2% 10% 2% 10% !important;
+    }
+}
+
+
+
+@media all and (min-width: 1280px) and (max-width: 1440px) {
+    .wrapper {
+        width: 80%;
+        margin: 0 10% auto;
+        padding: 0 0 1em 0;
+        /*border: 2px solid #0060BF;*/
+    }
+}
+
+@media all and (min-width: 1440px) and (max-width: 1920px) {
+    .wrapper {
+        width: 50%;
+        margin: 0 25% auto;
+        padding: 0 0 1em 0;
+        /*border: 2px solid yellow;*/
+    }
+    #watches {
+        margin-left: -200px;
+    }
+}
+
+@media
+(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    /* Retina-specific stuff here */
+
+    #watches {
+        margin-left: -400px;
+    }
+
+    #watch_1 {
+        background: url("../pic/Watch-1x2.png") top left no-repeat;
+        left: 140px;
+        width: 704px;
+        height: 780px;
+    }
+
+    #watch_2 {
+        background: url("../pic/Watch-2x2.png") top left no-repeat;
+        width: 950px;
+        height: 1090px;
+        left: 670px;
+    }
+
+    #watch_3 {
+        background: url("../pic/Watch-3x2.png") top left no-repeat;
+        width: 720px;
+        height: 840px;
+        left: 1510px;
+    }
+
+    #watch_4 {
+        background: url("../pic/Watch-4x2.png") top left no-repeat;
+        width: 492px;
+        height: 544px;
+        top: 680px;
+        left: 1570px;
+    }
+
+    #spacer {
+        height: 1380px;
+    }
+
+}

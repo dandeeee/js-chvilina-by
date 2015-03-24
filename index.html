@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HVILINA. Не разбiць, не спынiць, не стрымаць...</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="Description" content="HVILINA">
+    <meta name="Keywords" content="HVILINA">
+
+    <link rel="shortcut icon" href="pic/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="pic/favicon.ico" type="image/x-icon">
+
+    <link href="css/lib/jq-mobile.1.4.2.css" rel="stylesheet" type="text/css" media="all">
+
+    <script src="js/lib/jquery.1.10.2.js"></script>
+    <script src="js/lib/jq-mobile.1.4.2.js"></script>
+    <script src="js/lib/jquery.plaxmove.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/lib/jquery.validate.js"></script>
+    <script src="js/lib/localization/messages_ru.js"></script>
+
+    <link href="css/main-styles.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/hvilina.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/mail-popup.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/submit-page.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/medias.css" rel="stylesheet" type="text/css" media="all">
+
+    <script src="js/mailing.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+</head>
+<body onload="countdown();">
+
+<div data-role="page" id="hvilina_page" data-title="HVILINA">
+
+    <div data-role="content">
+        <div id="main" class="wrapper">
+            <div id="hvilina_logo">
+                <embed src="pic/Logo.svg"  />
+            </div>
+
+            <div id="watches">
+                <div id="watch_1"></div>
+                <div id="watch_2"></div>
+                <div id="watch_3"></div>
+                <div id="watch_4"></div>
+            </div>
+
+            <div id="spacer"></div>
+
+            <div id="timer">
+                <span id="days_left"></span><span class="column">:</span>
+                <span id="hours_left"></span><span class="column">:</span>
+                <span id="minutes_left"></span><span class="column">:</span>
+                <span id="seconds_left"></span>
+                <br>
+                <span class="annotation">д</span><span class="column"></span>
+                <span class="annotation">ч</span><span class="column"></span>
+                <span class="annotation">м</span><span class="column"></span>
+                <span class="annotation">с</span>
+            </div>
+
+            <div id="footer">
+                <p><b>Прэзентацыя: 30 сакавiка / 19:00 / Галерэя "Ў" / Менск</b></p>
+                <a href="#submit_page" class="button-red" data-icon="check" data-iconpos="right">Зарэзерваваць</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="submit_page" data-role="page">
+
+    <div>
+        <h3>Калi ласка, увядзiце сваю кантактную iнфармацыю,<br> каб наш менеджэр змог з вамi звязацца</h3>
+
+        <form name="preorder_form" class="user-data-form" method="GET">
+
+            <div data-role="fieldcontain">
+                <!--<label for="user_name" class="hidden">Iмя / Name:</label>-->
+                <input type="text" name="user_name" id="user_name" placeholder="Iмя / Name" />
+            </div>
+
+            <div data-role="fieldcontain">
+                <!--<label for="user_phone" class="hidden">Тэлефон / Phone:</label>-->
+                <input type="tel" name="user_phone" id="user_phone" placeholder="Тэлефон / Phone" />
+            </div>
+
+            <div data-role="fieldcontain">
+                <!--<label for="user_mail" class="hidden">E-mail: </label>-->
+                <input type="text" name="user_mail" id="user_mail" placeholder="E-mail" />
+            </div>
+
+            <div data-role="fieldcontain">
+                <!--<label for="user_mail" class="hidden">Горад / City:</label>-->
+                <input type="text" name="user_location" id="user_location" placeholder="Горад / City" />
+            </div>
+
+
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                <!--    <legend class="hidden">Мадэль / Model:</legend>-->
+                    <input type="radio" name="user_type" id="radio-choice-m" value="male" checked>
+                    <label for="radio-choice-m">Для пана / male</label>
+                    <input type="radio" name="user_type" id="radio-choice-f" value="female">
+                    <label for="radio-choice-f">Для панi / female</label>
+                </fieldset>
+            </div>
+
+            <a href="#" data-rel="back" data-role="button" data-icon="back" data-inline="true" data-theme="b">Назад</a>
+            <a href="javascript:submitPreorderForm();" type="submit" id="mail_btn" data-role="button" class="button-green" data-icon="check" data-inline="true" data-iconpos="right" data-type="submit">OK!</a>
+        </form>
+
+
+    </div>
+
+    <div class="footer">
+        <p id="order_summary" class="order_summary_p ui-corner-all"></p>
+
+        <hr>
+        <!--<h1>Hvilina</h1>-->
+        <br>
+        <embed src="pic/Logo.svg" style="width: 17em" />
+        <h3>Натхнення час...</h3>
+        <h3>E-mail: <a href="mailto:info@hvilina.by">info@hvilina.by</a></h3>
+    </div>
+</div>
+
+
+<script>
+//    (year,month,date,hours,minutes,seconds,milliseconds
+    timeend = new Date(2015,2,30, 19, 0, 0, 0);
+    function countdown() {
+        today = new Date();
+
+        today = Math.floor((timeend-today)/1000);
+        tsec=today%60; today=Math.floor(today/60); if(tsec<10)tsec='0'+tsec;
+        tmin=today%60; today=Math.floor(today/60); if(tmin<10)tmin='0'+tmin;
+        thour=today%24; today=Math.floor(today/24);
+
+        $("#days_left").html(today);
+        $("#hours_left").html(thour);
+        $("#minutes_left").html(tmin);
+        $("#seconds_left").html(tsec);
+
+        window.setTimeout("countdown()",1000);
+    }
+
+    $(function(){
+        $('#watch_1').plaxmove({ratioH:0.05,ratioV:0.1})
+        $('#watch_2').plaxmove({ratioH:0.1,ratioV:0.1})
+        $('#watch_3').plaxmove({ratioH:0.1,ratioV:0.05})
+        $('#watch_4').plaxmove({ratioH:0.03,ratioV:0.05})
+    });
+
+    function submitPreorderForm(){
+        $("form").submit();
+    }
+
+    $( "#submit_page" ).on("pageinit", function() {
+        $("form" ).validate({
+            rules: {
+                user_name: {
+                    required: true
+                },
+                user_phone: {
+                    required: true
+                },
+                user_mail: {
+                    required: false,
+                    email: true
+                },
+                user_location: {
+                    required: false
+                },
+                user_type: {
+                    required: true
+                }
+            },
+            submitHandler: function (form) {
+                processData();
+                return false;
+            },
+            errorPlacement: function( error, element ) {
+                error.insertAfter( element.parent() );
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

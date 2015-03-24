@@ -1,0 +1,96 @@
+#submit_page{
+    padding: 2em;
+    width: 50%;
+    margin: 2% 25% 7% 25%;
+    text-align: center !important;
+    border: 1px solid #c0c0c0;
+    border-radius: 1em;
+    background-color: #ffffff !important;
+    color: #000;
+    overflow: hidden;
+    font-size: 100%;
+    font-family: 'Tenor Sans', sans-serif !important;
+}
+#submit_page div {
+    text-align: center;
+}
+
+#submit_page .footer {
+    font-size: 0.8em;
+}
+
+
+#submit_page form {
+    overflow: hidden;
+}
+
+#submit_page label,
+#submit_page legend {
+    font-weight: bold;
+    text-align: left !important;
+
+}
+
+#submit_page .hidden {
+    visibility: hidden;
+}
+
+#submit_page .order_summary_p {
+    color: #cc0000;
+    font-size: 100%;
+    border-radius: 1em;
+    background-color: rgba(189, 189, 189, 0.51);
+    border: 1px solid rgba(223, 223, 223, 0.51);
+    padding-bottom: 2em;
+    display: none;
+}
+
+#submit_page h1{
+    font-weight: 900 !important;
+    font-size: 3em;
+}
+
+#submit_page h3 {
+    font-weight: bold !important;
+    margin: 0;
+    padding: 0;
+    font-size: 1.4em;
+}
+
+#submit_page input {
+    margin-right: 1em;
+    padding-right: 1em;
+}
+
+#submit_page a{
+    font-weight: bold;
+    font-family: 'Arial' !important;
+}
+
+label.error {
+    color: red;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-top: 0.5em;
+    width: 100%;
+    float: none;
+    text-align: left !important;
+}
+@media screen and (orientation: portrait) {
+    label.error {
+        margin-left: 0;
+        display: block;
+    }
+}
+@media screen and (orientation: landscape) {
+    label.error {
+        display: inline-block;
+        margin-left: 22%;
+    }
+}
+em {
+    color: red;
+    font-weight: bold;
+    padding-right: .25em;
+}
