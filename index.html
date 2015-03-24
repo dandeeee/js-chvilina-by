@@ -63,7 +63,17 @@
 
             <div id="footer">
                 <p><b>Прэзентацыя: 30 сакавiка / 19:00 / Галерэя "Ў" / Менск</b></p>
-                <a href="#submit_page" class="button-red" data-icon="check" data-iconpos="right">Зарэзерваваць</a>
+                <a href="#submit_page">
+                <div class="button-red">
+                    <p class="reserve_container">
+                    <span class="reserve_txt">Зарэзерваваць</span><br>
+                    <span class="reserve">reserve</span>
+                    </p>
+                    <span class="discount">-5%</span>
+                </div>
+                </a>
+                <p class="contacts">+375 29 <b>333-04-84</b> | <a href="mailto:info@hvilina.by">info@hvilina.by</a></p>
+
             </div>
 
         </div>
@@ -150,10 +160,10 @@
     }
 
     $(function(){
-        $('#watch_1').plaxmove({ratioH:0.05,ratioV:0.1})
-        $('#watch_2').plaxmove({ratioH:0.1,ratioV:0.1})
-        $('#watch_3').plaxmove({ratioH:0.1,ratioV:0.05})
-        $('#watch_4').plaxmove({ratioH:0.03,ratioV:0.05})
+        $('#watch_1').plaxmove({ratioH:0.08,ratioV:0.02})
+        $('#watch_2').plaxmove({ratioH:0.05,ratioV:0.05})
+        $('#watch_3').plaxmove({ratioH:0.01,ratioV:0.1, reverse:true})
+        $('#watch_4').plaxmove({ratioH:0.03,ratioV:0.05, reverse:true})
     });
 
     function submitPreorderForm(){
