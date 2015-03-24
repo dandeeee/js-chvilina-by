@@ -83,7 +83,7 @@ function sendOrderCallBack(data){
     if(data.mail!=""){
         str += 'Мы адаслалi копiю лiста на ваш яшчык <span style="color: #0e48f5;"><u> ' + data.mail + '</u></span>. ';
     }
-    str += "Калiласка, пачакайце, калi менеджэр з вамi звяжацца.</h3>";
+    str += "Калi ласка, пачакайце, калi менеджэр з вамi звяжацца.</h3>";
     $("#order_summary").css("display","block");
     $("#order_summary").html(str);
 
