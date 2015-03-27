@@ -1,5 +1,4 @@
-//var EMAIL_TO = "info@hvilina.by"
-var EMAIL_TO = "danila.dedkov@gmail.com"
+var EMAIL_TO = "info@hvilina.by"
 var SITE_NAME = "hvilina.by"
 var MAIL_SUBJECT = "Hvilina order"
 var PROVIDER = 'https://mandrillapp.com/api/1.0/messages/send.json'
