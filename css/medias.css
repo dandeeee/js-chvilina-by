@@ -66,46 +66,44 @@
     }
 }
 
-@media
-(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+/*@media*/
+/*(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {*/
 
-    /* Retina-specific stuff here */
+    /*#watches {*/
+        /*margin-left: -400px;*/
+    /*}*/
 
-    #watches {
-        margin-left: -400px;
-    }
+    /*#watch_1 {*/
+        /*background: url("../pic/Watch-1x2.png") top left no-repeat;*/
+        /*left: 140px;*/
+        /*width: 704px;*/
+        /*height: 780px;*/
+    /*}*/
 
-    #watch_1 {
-        background: url("../pic/Watch-1x2.png") top left no-repeat;
-        left: 140px;
-        width: 704px;
-        height: 780px;
-    }
+    /*#watch_2 {*/
+        /*background: url("../pic/Watch-2x2.png") top left no-repeat;*/
+        /*width: 950px;*/
+        /*height: 1090px;*/
+        /*left: 670px;*/
+    /*}*/
 
-    #watch_2 {
-        background: url("../pic/Watch-2x2.png") top left no-repeat;
-        width: 950px;
-        height: 1090px;
-        left: 670px;
-    }
+    /*#watch_4 {*/
+        /*background: url("../pic/Watch-3x2.png") top left no-repeat;*/
+        /*width: 720px;*/
+        /*height: 840px;*/
+        /*left: 1510px;*/
+    /*}*/
 
-    #watch_4 {
-        background: url("../pic/Watch-3x2.png") top left no-repeat;
-        width: 720px;
-        height: 840px;
-        left: 1510px;
-    }
+    /*#watch_3 {*/
+        /*background: url("../pic/Watch-4x2.png") top left no-repeat;*/
+        /*width: 492px;*/
+        /*height: 544px;*/
+        /*top: 680px;*/
+        /*left: 1570px;*/
+    /*}*/
 
-    #watch_3 {
-        background: url("../pic/Watch-4x2.png") top left no-repeat;
-        width: 492px;
-        height: 544px;
-        top: 680px;
-        left: 1570px;
-    }
+    /*#spacer {*/
+        /*height: 1380px;*/
+    /*}*/
 
-    #spacer {
-        height: 1380px;
-    }
-
-}
+/*}*/
