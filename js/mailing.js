@@ -1,31 +1,38 @@
 var EMAIL_TO = "info@hvilina.by"
 var SITE_NAME = "hvilina.by"
-var MAIL_SUBJECT = "Предзаказ часов Hvilina"
+var MAIL_SUBJECT = "Hvilina order"
 var PROVIDER = 'https://mandrillapp.com/api/1.0/messages/send.json'
 var TOKEN = 'q5m-17tGhHoYATouRzxK6A'
 
 function gatherUserData() {
     var frm = document.preorder_form;
-    var name, phone, mail, location, type;
+    var user_name, user_phone, user_mail, user_location, user_text,user_choise_male, user_choise_female, user_choise_vershnik;
     if(frm!=null){
-        name = frm.elements['user_name'].value;
-        phone = frm.elements['user_phone'].value;
-        mail = frm.elements['user_mail'].value;
-        location = frm.elements['user_location'].value;
-        type = frm.elements['user_type'].value;
+        user_name = frm.elements['user_name'].value;
+        user_phone = frm.elements['user_phone'].value;
+        user_mail = frm.elements['user_mail'].value;
+        user_location = frm.elements['user_location'].value;
+        user_text = frm.elements['user_text'].value;
+        user_choise_male = (frm.elements['user_choise_male'].checked == true ) ? "Так / Yes" : "Не / No";
+        user_choise_female = (frm.elements['user_choise_female'].checked == true ) ? "Так / Yes" : "Не / No";
+        user_choise_vershnik = (frm.elements['user_choise_vershnik'].checked == true ) ? "Так / Yes" : "Не / No";
     }
 
-    return { "name" : name, "phone" : phone, "mail" : mail, "location" : location, "type" : type }
+    return { "user_name" : user_name, "user_phone" : user_phone, "user_mail" : user_mail, "user_location" : user_location, "user_text" : user_text,
+        "user_choise_male" : user_choise_male, "user_choise_female" : user_choise_female, "user_choise_vershnik" : user_choise_vershnik};
 }
 
 function userDataToString(data){
     var str = "";
 
-    if(data.name!="") str += "Имя: " + data.name + "<br>";
-    if(data.phone!="") str += "Тел: " + data.phone + "<br>";
-    if(data.mail!="") str += "E-mail: " + data.mail + "<br>";
-    if(data.location!="") str += "Город: " + data.location+ "<br>";
-    if(data.type!="") str += "Вид: " + data.type+ "<br>";
+    if(data.user_name!="") str += "Iмя / name: " + data.user_name + "<br>";
+    if(data.user_phone!="") str += "Tэлефон / phone: " + data.user_phone + "<br>";
+    if(data.user_mail!="") str += "E-mail: " + data.user_mail + "<br>";
+    if(data.user_location!="") str += "Горад / city: " + data.user_location+ "<br>";
+    if(data.user_text!="") str += "Тэкст / text: " + data.user_text+ "<br>";
+    if(data.user_choise_male!="") str += "Повязь часу для пана / Poviaź Času male: " + data.user_choise_male+ "<br>";
+    if(data.user_choise_female!="") str += "Повязь часу для панi / Poviaź Času female: " + data.user_choise_female+ "<br>";
+    if(data.user_choise_vershnik!="") str += "ВЕРШНIK 1588 / Vieršnik 1588: " + data.user_choise_vershnik+ "<br>";
 
     return str;
 }
@@ -36,7 +43,7 @@ function processData() {
     sendOrderMail(userDataToString(userData) + "<hr>", EMAIL_TO, userData);
 
     if(userData.mail!="")
-        sendConfirmationMailToUser(userData, userDataToString(userData), userData.mail);
+        sendConfirmationMailToUser(userData, userDataToString(userData), userData.user_mail);
 }
 
 function sendOrderMail(content, mailTo, userData) {
@@ -44,10 +51,10 @@ function sendOrderMail(content, mailTo, userData) {
 }
 
 function sendConfirmationMailToUser(userData, content, mailTo) {
-    var str = "Здравствуйте, " + userData.name + "!<br><br>" + "Вы только что сделали следующую заявку на сайте " + SITE_NAME + "<br><br>";
+    var str = "Добры дзень, " + userData.user_name + "!<br><br>" + " Вы толькi што пакiнулi заяўку на сайце " + SITE_NAME + "<br><br>";
     str +=  content ;
-    str += "<br>" + "Пожалуйста, дождитесь когда мы свяжемся с вами для её подтверждения.";
-    str += "<br><br>" + "С уважением, <br>Hvilina.by<br>";
+    str += "<br>" + "Калi ласка, пачакайце, пакуль менеджэр з вамi звяжацца.";
+    str += "<br><br>" + "З павагай, <br>" +SITE_NAME+ "<br>";
     sendMail(str, mailTo, userData);
 }
 
@@ -79,12 +86,5 @@ function sendMail(content, mailTo, data, callBack) {
 }
 
 function sendOrderCallBack(data){
-    var str = "<h1>Дзякуй!</h1><h3>";
-    if(data.mail!=""){
-        str += 'Мы адаслалi копiю лiста на ваш яшчык <span style="color: #0e48f5;"><u> ' + data.mail + '</u></span>. ';
-    }
-    str += "Калi ласка, пачакайце, калi менеджэр з вамi звяжацца.</h3>";
-    $("#order_summary").css("display","block");
-    $("#order_summary").html(str);
-
+    $.mobile.navigate("#thank-you");
 }

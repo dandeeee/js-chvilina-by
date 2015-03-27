@@ -10,9 +10,13 @@
         margin-left: -100px;
     }
 
-    #submit_page{
+    #select-page {
         width: 80% !important;
         margin: 1% !important;
+    }
+
+    #thank-you {
+        width: 90% !important;
     }
 }
 
@@ -28,9 +32,14 @@
         margin-left: -50px;
     }
 
-    #submit_page{
+    #select-page {
         width: 80% !important;
         margin: 2% 10% 2% 10% !important;
+    }
+
+
+    #thank-you {
+        width: 90% !important;
     }
 }
 
@@ -80,14 +89,14 @@
         left: 670px;
     }
 
-    #watch_3 {
+    #watch_4 {
         background: url("../pic/Watch-3x2.png") top left no-repeat;
         width: 720px;
         height: 840px;
         left: 1510px;
     }
 
-    #watch_4 {
+    #watch_3 {
         background: url("../pic/Watch-4x2.png") top left no-repeat;
         width: 492px;
         height: 544px;

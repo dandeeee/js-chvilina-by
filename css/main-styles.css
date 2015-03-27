@@ -1,6 +1,7 @@
 body {
     /*height: 100%;*/
     background: #000;
+
 }
 .ui-mobile,
 .ui-mobile-viewport, .ui-overlay-c,
@@ -9,8 +10,10 @@ body {
 
 }
 a, p, span, ul,dl, h1, h2,h3 {
-    font-family: 'Poiret One' !important;
+    /*font-family: 'Poiret One' !important;*/
+    font-family: Arial;
     font-weight: normal;
+    text-shadow: none !important;
 }
 h1{
     /*font-size: 30px;*/
@@ -46,10 +49,6 @@ body{
     margin: 0;
     padding: 0;
 }
-
-
-
-
 
 .about-page {
     border-radius: .3125em;

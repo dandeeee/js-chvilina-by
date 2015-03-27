@@ -1,0 +1,38 @@
+#thank-you {
+    padding-top: 1em;
+    width: 40% !important;
+    text-align: center !important;
+    overflow: hidden;
+    font-size: 100%;
+    font-family: Arial !important;
+    position: relative;
+    margin: 0 auto !important;
+}
+
+#thank-you .wrap {
+    color: #000;
+    padding: 2.5em;
+    font-size: 140%;
+    text-align: center;
+    border: 1px solid #c0c0c0;
+    border-radius: 1em;
+    background-color: #cccccc !important;
+    background-image: url("../pic/Logo-szczyt.svg");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-top: 40%;
+}
+
+
+
+a.btn_thankyou:link,
+a.btn_thankyou:visited,
+a.btn_thankyou:active {
+    color: #c40000 !important;
+    text-decoration: none !important;
+}
+
+a.btn_thankyou:hover {
+    text-decoration: underline !important;
+}

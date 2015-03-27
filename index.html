@@ -8,8 +8,8 @@
     <meta name="Description" content="HVILINA">
     <meta name="Keywords" content="HVILINA">
 
-    <link rel="shortcut icon" href="pic/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="pic/favicon.ico" type="image/x-icon">
+    <!--<link rel="shortcut icon" href="pic/favicon.ico" type="image/x-icon">-->
+    <!--<link rel="icon" href="pic/favicon.ico" type="image/x-icon">-->
 
     <link href="css/lib/jq-mobile.1.4.2.css" rel="stylesheet" type="text/css" media="all">
 
@@ -23,6 +23,7 @@
     <link href="css/hvilina.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/mail-popup.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/submit-page.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/thank-you-page.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/medias.css" rel="stylesheet" type="text/css" media="all">
 
     <script src="js/mailing.js"></script>
@@ -30,21 +31,21 @@
     <link href='http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
 </head>
-<body onload="countdown();">
+<body>
 
-<div data-role="page" id="hvilina_page" data-title="HVILINA">
+<div id="hvilina_page" data-role="page">
 
     <div data-role="content">
         <div id="main" class="wrapper">
             <div id="hvilina_logo">
-                <embed src="pic/Logo.svg"  />
+                <embed src="pic/Logo-Big.svg"  />
             </div>
 
             <div id="watches">
                 <div id="watch_1"></div>
                 <div id="watch_2"></div>
-                <div id="watch_3"></div>
                 <div id="watch_4"></div>
+                <div id="watch_3"></div>
             </div>
 
             <div id="spacer"></div>
@@ -54,23 +55,18 @@
                 <span id="hours_left"></span><span class="column">:</span>
                 <span id="minutes_left"></span><span class="column">:</span>
                 <span id="seconds_left"></span>
-                <br>
-                <span class="annotation">дз</span><span class="column"></span>
-                <span class="annotation">г</span><span class="column"></span>
-                <span class="annotation">х</span><span class="column"></span>
-                <span class="annotation">с</span>
             </div>
 
             <div id="footer">
                 <p><b>Прэзентацыя: 30 сакавiка / 19:00 / Галерэя "Ў" / Менск</b></p>
-                <a href="#submit_page">
-                <div class="button-red">
-                    <p class="reserve_container">
-                    <span class="reserve_txt">Зарэзерваваць</span><br>
-                    <span class="reserve">reserve</span>
-                    </p>
-                    <span class="discount">-5%</span>
-                </div>
+                <a href="#select-page" data-rel="page" data-transition="fade" data-position-to="window">
+                    <div class="button-red">
+                        <p class="reserve_container">
+                            <span class="reserve_txt">Зарэзерваваць</span><br>
+                            <span class="reserve">reserve</span>
+                        </p>
+                        <span class="discount">-5%</span>
+                    </div>
                 </a>
                 <p class="contacts">+375 29 <b>333-04-84</b> | <a href="mailto:info@hvilina.by">info@hvilina.by</a></p>
 
@@ -82,66 +78,62 @@
 
 </div>
 
-<div id="submit_page" data-role="page">
+<div id="select-page" data-role="page" data-overlay-theme="b">
 
-    <div>
-        <h3>Калi ласка, увядзiце сваю кантактную iнфармацыю,<br> каб наш менеджэр змог з вамi звязацца</h3>
-
+    <div class="wrap">
+        <embed src="pic/Logo-small.svg" class="logo_small" />
+        <a href="#" data-rel="back" class="btn_close"></a>
         <form name="preorder_form" class="user-data-form" method="GET">
 
-            <div data-role="fieldcontain">
-                <!--<label for="user_name" class="hidden">Iмя / Name:</label>-->
-                <input type="text" name="user_name" id="user_name" placeholder="Iмя / Name" />
+            <input type="text" name="user_name" id="user_name" placeholder="iмя / name" />
+            <input type="tel"  name="user_phone" id="user_phone" placeholder="тэлефон / phone" />
+            <input type="text" name="user_mail" id="user_mail" placeholder="e-mail" />
+            <input type="text" name="user_location" id="user_location" placeholder="горад / city" />
+            <input type="text" name="user_text" id="user_text" placeholder="тэкст / text" />
+
+            <p class="title" style="margin: 0.5em 0 0.5em 1em"><b>ГАДЗIННIК:</b> / WATCH</p>
+            <div class="gray_container">
+                <p class="title"><b>ПОВЯЗЬ ЧАСУ:</b> / Poviaź Času</p>
+                <fieldset data-role="controlgroup">
+                    <input type="checkbox" name="user_choise_male" id="user_choise_male" />
+                    <label for="user_choise_male" class="checkbox_lbl">Для пана / male</label>
+                </fieldset>
+                <fieldset data-role="controlgroup">
+                    <input type="checkbox" name="user_choise_female" id="user_choise_female" />
+                    <label for="user_choise_female" class="checkbox_lbl">Для панi / female</label>
+                </fieldset>
+
             </div>
 
-            <div data-role="fieldcontain">
-                <!--<label for="user_phone" class="hidden">Тэлефон / Phone:</label>-->
-                <input type="tel" name="user_phone" id="user_phone" placeholder="Тэлефон / Phone" />
-            </div>
-
-            <div data-role="fieldcontain">
-                <!--<label for="user_mail" class="hidden">E-mail: </label>-->
-                <input type="text" name="user_mail" id="user_mail" placeholder="E-mail" />
-            </div>
-
-            <div data-role="fieldcontain">
-                <!--<label for="user_mail" class="hidden">Горад / City:</label>-->
-                <input type="text" name="user_location" id="user_location" placeholder="Горад / City" />
-            </div>
-
-
-            <div data-role="fieldcontain">
-                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                <!--    <legend class="hidden">Мадэль / Model:</legend>-->
-                    <input type="radio" name="user_type" id="radio-choice-m" value="male" checked>
-                    <label for="radio-choice-m">Для пана / male</label>
-                    <input type="radio" name="user_type" id="radio-choice-f" value="female">
-                    <label for="radio-choice-f">Для панi / female</label>
+            <div class="gray_container">
+                <fieldset data-role="controlgroup">
+                    <input type="checkbox" name="user_choise_vershnik" id="user_choise_vershnik" />
+                    <label for="user_choise_vershnik" class="checkbox_lbl"><b>ВЕРШНIK 1588 /</b> Vieršnik 1588</label>
                 </fieldset>
             </div>
 
-            <a href="#" data-rel="back" data-role="button" data-icon="back" data-inline="true" data-theme="b">Назад</a>
-            <a href="javascript:submitPreorderForm();" type="submit" id="mail_btn" data-role="button" class="button-green" data-icon="check" data-inline="true" data-iconpos="right" data-type="submit">OK!</a>
-        </form>
 
+            <div class="ui-input-btn ui-btn ui-btn-inline" id="btn_submit">
+                даслаць / send
+                <input type="button" onclick="submitPreorderForm();" data-enhanced="true" value="даслаць / send">
+            </div>
+
+        </form>
 
     </div>
 
-    <div class="footer">
-        <p id="order_summary" class="order_summary_p ui-corner-all"></p>
+</div>
 
-        <hr>
-        <!--<h1>Hvilina</h1>-->
-        <br>
-        <embed src="pic/Logo.svg" style="width: 17em" />
-        <h3>Натхнення час...</h3>
-        <h3>E-mail: <a href="mailto:info@hvilina.by">info@hvilina.by</a></h3>
+
+<div id="thank-you" data-role="page" data-overlay-theme="b">
+    <div class="wrap">
+        <a href="#hvilina_page" data-rel="page" class="btn_thankyou">Дзякуй / Thank you</a>
     </div>
 </div>
 
 
 <script>
-//    (year,month,date,hours,minutes,seconds,milliseconds
+    //    (year,month,date,hours,minutes,seconds,milliseconds
     timeend = new Date(2015,2,30, 19, 0, 0, 0);
     function countdown() {
         today = new Date();
@@ -151,26 +143,36 @@
         tmin=today%60; today=Math.floor(today/60); if(tmin<10)tmin='0'+tmin;
         thour=today%24; today=Math.floor(today/24);
 
-        $("#days_left").html(today);
-        $("#hours_left").html(thour);
-        $("#minutes_left").html(tmin);
-        $("#seconds_left").html(tsec);
+        if(today < 0 || thour <0 || tmin <0 || tsec <0){
+            $("#days_left").html(0);
+            $("#hours_left").html(0);
+            $("#minutes_left").html('00');
+            $("#seconds_left").html('00');
+        } else if(today >= 0 && thour >=0 && tmin >=0 && tsec >=0){
+            $("#days_left").html(today);
+            $("#hours_left").html(thour);
+            $("#minutes_left").html(tmin);
+            $("#seconds_left").html(tsec);
 
-        window.setTimeout("countdown()",1000);
+            window.setTimeout("countdown()",1000);
+        }
+
     }
 
+    countdown();
+
     $(function(){
-        $('#watch_1').plaxmove({ratioH:0.08,ratioV:0.02})
-        $('#watch_2').plaxmove({ratioH:0.05,ratioV:0.05})
-        $('#watch_3').plaxmove({ratioH:0.01,ratioV:0.1, reverse:true})
-        $('#watch_4').plaxmove({ratioH:0.03,ratioV:0.05, reverse:true})
+        $('#watch_1').plaxmove({ratioH:0.02,ratioV:0.02});
+        $('#watch_2').plaxmove({ratioH:0.02,ratioV:0.03});
+        $('#watch_3').plaxmove({ratioH:0.01,ratioV:0.02, reverse:true});
+        $('#watch_4').plaxmove({ratioH:0.01,ratioV:0.1, reverse:true});
     });
 
     function submitPreorderForm(){
         $("form").submit();
     }
 
-    $( "#submit_page" ).on("pageinit", function() {
+    $( "#select-page" ).on("pageinit", function() {
         $("form" ).validate({
             rules: {
                 user_name: {
