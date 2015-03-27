@@ -1,6 +1,6 @@
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
-		define( ["jquery", "../jquery.validate"], factory );
+		define( ["jquery", "jquery.validate"], factory );
 	} else {
 		factory( jQuery );
 	}
@@ -11,9 +11,9 @@
  * Locale: RU (Russian; русский язык)
  */
 $.extend($.validator.messages, {
-	required: "Это поле необходимо заполнить.",
+	required: "Гэтае поле трэба запоўнiць.",
 	remote: "Пожалуйста, введите правильное значение.",
-	email: "Пожалуйста, введите корректный адрес электронной почты.",
+	email: "Калi ласка, увядзiце сапраўдны адрас электроннага яшчыка.",
 	url: "Пожалуйста, введите корректный URL.",
 	date: "Пожалуйста, введите корректную дату.",
 	dateISO: "Пожалуйста, введите корректную дату в формате ISO.",
