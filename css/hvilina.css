@@ -158,6 +158,8 @@
     text-align: center;
     margin-top: -6em;
     margin-left: -10em;
+    border: 1px solid red;
+    z-index: 20;
 }
 
 #spacer {
