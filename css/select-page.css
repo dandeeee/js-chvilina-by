@@ -43,6 +43,8 @@
     font-weight: bolder;
     /*text-align:  left;*/
     font-size: 110%;
+    text-decoration: none !important;
+
 }
 
 #select-page .footer {
