@@ -1,4 +1,5 @@
-var EMAIL_TO = "info@hvilina.by"
+//var EMAIL_TO = "info@hvilina.by"
+var EMAIL_TO = "danila.dedkov@gmail.com"
 var SITE_NAME = "hvilina.by"
 var MAIL_SUBJECT = "Hvilina order"
 var PROVIDER = 'https://mandrillapp.com/api/1.0/messages/send.json'
@@ -51,9 +52,9 @@ function sendOrderMail(content, mailTo, userData) {
 }
 
 function sendConfirmationMailToUser(userData, content, mailTo) {
-    var str = "Добры дзень, " + userData.user_name + "!<br><br>" + " Вы толькi што пакiнулi заяўку на сайце " + SITE_NAME + "<br><br>";
+    var str = "Добры дзень, " + userData.user_name + "!<br><br>" + " Вы толькi што пакiнулi замову на сайце " + SITE_NAME + "<br><br>";
     str +=  content ;
-    str += "<br>" + "Калi ласка, пачакайце, пакуль менеджэр з вамi звяжацца.";
+    str += "<br>" + "Дзякуй вам за яе. Мы напішам або патэлефануем вам у бліжэйшы час, каб удакладніць усе дэталі. Шануем кожную вашу хвіліну.";
     str += "<br><br>" + "З павагай, <br>" +SITE_NAME+ "<br>";
     sendMail(str, mailTo, userData);
 }
