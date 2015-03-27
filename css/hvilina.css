@@ -105,7 +105,6 @@
     height: 10em;
     z-index: 100;
     position: relative;
-    border: 1px solid red;
 }
 
 #timer {
