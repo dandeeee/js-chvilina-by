@@ -38,6 +38,13 @@
     padding: 1em;
 }
 
+#select-page .price {
+    color: #950000 !important;
+    font-weight: bolder;
+    /*text-align:  left;*/
+    font-size: 110%;
+}
+
 #select-page .footer {
     font-size: 0.8em;
 }
